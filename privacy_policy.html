@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - TummyCheck: FODMAP Scanner</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 32px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        h1 {
+            color: #047857;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .last-updated {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        h2 {
+            color: #111827;
+            font-size: 20px;
+            margin-top: 28px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+        p, li {
+            color: #374151;
+            font-size: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .highlight {
+            background-color: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+        a {
+            color: #047857;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Privacy Policy</h1>
+    <div class="last-updated">Last updated: October 1, 2026</div>
+
+    <p><strong>TummyCheck: FODMAP Scanner</strong> ("TummyCheck", "the App", "we", "us", or "our"), operated by Rose Apps, is committed to protecting your privacy. This Privacy Policy explains how our mobile application handles device access, data, and permissions.</p>
+
+    <div class="highlight">
+        <strong>Privacy-First Architecture:</strong> TummyCheck does not collect, store, transmit, or sell any personally identifiable information. We operate on a local-first architecture: your dietary sensitivity profile, scan history, Safe List favorites, store selections, and captured product photos remain securely on your personal device.
+    </div>
+
+    <h2>1. Device Permissions and Data Handling</h2>
+    <p>TummyCheck requests access to specific device capabilities solely to deliver core app functionality:</p>
+    <ul>
+        <li>
+            <strong>Camera (<code>android.permission.CAMERA</code>):</strong> Used to scan product barcodes in real time and recognize ingredient text on food packaging and restaurant menus using on-device machine learning (Google ML Kit). Live camera frames for barcode recognition and menu analysis are processed strictly in-memory and are never uploaded to any remote server.
+        </li>
+        <li>
+            <strong>Product Photos (On-Device Storage &amp; Optional Cloud Backup):</strong> When you scan a product or choose to capture/retake a photo, a small thumbnail image (~128px JPEG) is saved locally on your device to help you visually recognize products in your History and Safe List.
+            <br><br>
+            <em>Backup Behavior:</em> By default, product photos are stored in your device's private non-backed-up storage (<code>noBackupFilesDir</code>) and are <strong>never</strong> included in Google Auto Backup or uploaded to the cloud. If you explicitly enable <em>"Include photos in Google backup"</em> in Profile &amp; Settings, the photo database is stored in app files storage so it can be restored if you switch devices. Photos are never transmitted to our servers or any third party.
+        </li>
+        <li>
+            <strong>Notifications (<code>android.permission.POST_NOTIFICATIONS</code>):</strong> On Android 13 (API 33) and higher, the app requests notification permission only if you choose to enable the <em>Safe List Freshness</em> reminder in Settings. This reminder performs a local check on your device and alerts you if a saved product has not been reviewed in 30 days (since manufacturers occasionally update ingredient formulations). It does not send marketing notifications.
+        </li>
+        <li>
+            <strong>Local Storage (SQLite &amp; SharedPreferences):</strong> The app stores your scan history, custom sensitivity profile toggles (fructans, GOS, lactose, excess fructose, polyols, ambiguous seasonings), Safe List favorites with aisle categories, My Stores supermarket selections, UI theme preferences, and free scan quota counters exclusively in your device's private storage.
+        </li>
+    </ul>
+
+    <h2>2. Third-Party Services &amp; Network Communication</h2>
+    <p>TummyCheck initiates network connections only for the following specific purposes:</p>
+    <ul>
+        <li>
+            <strong>Open Food Facts API:</strong> When you scan a barcode not already cached in your local database, the app queries the public Open Food Facts database using the numeric barcode (GTIN) to retrieve the product name, brand, and ingredient list. No user identifiers, device IDs, advertising IDs, IP tracking tokens, or location coordinates are sent with this request. Food product data is licensed under the Open Database License (ODbL).
+        </li>
+        <li>
+            <strong>Google Play Billing:</strong> In-app purchases for TummyCheck Pro are handled directly by the official Google Play Billing Library. Payment credentials, credit cards, billing addresses, and transaction security are processed entirely by Google. The app receives only a cryptographically signed purchase token to unlock Pro features. The billing entitlement cache is explicitly excluded from cloud backups to prevent invalid state transfer.
+        </li>
+    </ul>
+
+    <h2>3. User-Initiated Data Export &amp; Sharing</h2>
+    <p>
+        The app allows you to export your saved Safe List, scan history, or learned barcode library as plain text or CSV files via the standard Android system share sheet. This export occurs exclusively when you explicitly tap an export or share button. You control which external application (such as email, messaging, or cloud drive) receives your exported data. TummyCheck never transmits your exported files automatically or silently.
+    </p>
+
+    <h2>4. Multilingual Restaurant Scripts ("Show Your Server")</h2>
+    <p>
+        When using the Dining / Restaurant OCR mode, the app generates polite dietary cards in English, Spanish, French, and Italian to help communicate dietary preferences to restaurant staff. All translation templates and script generation logic are bundled locally within the app and operate entirely offline with zero network transmission.
+    </p>
+
+    <h2>5. Analytics, Advertising, and Tracking</h2>
+    <p>
+        TummyCheck contains <strong>zero third-party advertising SDKs, zero user tracking pixels, and zero behavioral telemetry SDKs</strong>. We do not track you across applications or websites, and we never sell, rent, or monetize your personal or dietary information.
+    </p>
+
+    <h2>6. Children's Privacy</h2>
+    <p>
+        TummyCheck is designed for general audiences aged 18 and older who are managing dietary preferences. We do not knowingly collect personal information from children under 13. Because the app does not collect personal identity information, no personal data from minors is processed or stored on our servers.
+    </p>
+
+    <h2>7. Informational Nutrition Disclaimer</h2>
+    <p>
+        TummyCheck is an informational nutritional reference tool based on published low-FODMAP dietary literature. It is not a medical device, diagnostic tool, clinical service, or substitute for professional medical or dietary consultation. Always consult a qualified physician, gastroenterologist, or registered dietitian before beginning or altering an elimination diet.
+    </p>
+
+    <h2>8. Changes to This Privacy Policy</h2>
+    <p>
+        We may update this Privacy Policy from time to time. Any revisions will be published within the application and at this URL with an updated "Last updated" date.
+    </p>
+
+    <h2>9. Contact Us</h2>
+    <p>If you have questions, feedback, or concerns regarding this Privacy Policy or your data, please contact:</p>
+    <p>
+        <strong>Rose Apps</strong><br>
+        Developer Contact: Andy Rose<br>
+        Email: <a href="mailto:support@tummycheckapp.com">support@tummycheckapp.com</a><br>
+        Website: <a href="https://andrewlrose.com" target="_blank" rel="noopener">andrewlrose.com</a>
+    </p>
+
+    <footer>
+        &copy; 2026 Rose Apps. All rights reserved.
+    </footer>
+</div>
+</body>
+</html>
